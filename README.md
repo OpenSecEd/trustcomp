@@ -25,6 +25,9 @@ Then you can go into the directory of the desired document and run `make`.
 The source files are structured as follows:
 
 - `overview` contains slides to give an overview of trusted computing.
+- `drmlab` contains the instruction for a lab where the student should reflect 
+  on the requirements of trusted computing through an example of Digital Rights 
+  Management.
 
 In each directory the files are structured as follows:
 
