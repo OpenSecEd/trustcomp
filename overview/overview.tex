@@ -2,7 +2,7 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[ibycus,swedish,english]{babel}
+\usepackage[ibycus,swedish,british]{babel}
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{color}
@@ -15,7 +15,43 @@
 \usepackage{listings}
 \usepackage{csquotes}
 
-\setbeamertemplate{bibliography item}[text]
+\usepackage{xparse}
+\ProvideDocumentEnvironment{exercise}{o}{%
+  \setbeamercolor{block body}{bg=yellow!30,fg=black}
+  \setbeamercolor{block title}{bg=yellow,fg=black}
+  \IfValueTF{#1}{%
+    \begin{block}{Exercise: #1}
+  }{%
+    \begin{block}{Exercise}
+  }
+}{%
+  \end{block}
+}
+
+\mode<presentation>{%
+  \usetheme{Berlin}
+  \setbeamertemplate{footline}{%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+      \leavevmode{\usebeamerfont{author in head/foot}\insertshortauthor}%
+      \hfill%
+      {\usebeamerfont{institute in head/foot}%
+        \usebeamercolor[fg]{institute in head/foot}\insertshortinstitute}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+      {\usebeamerfont{title in head/foot}\insertshorttitle}%
+      \hfill\insertframenumber%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+  }
+  \setbeamercovered{transparent}
+  \setbeamertemplate{bibliography item}[text]
+}
+
 \usepackage[natbib,style=alphabetic,maxbibnames=99]{biblatex}
 \addbibresource{overview.bib}
 
@@ -48,17 +84,10 @@
 \newcommand{\share}[1]{\stackrel{#1}{\leftrightarrow}}
 \newcommand{\pubkey}[1]{\stackrel{#1}{\mapsto}}
 
-\mode<presentation>{%
-  \usetheme{Frankfurt}
-  \setbeamercovered{transparent}
-  \usecolortheme{seagull}
-}
-\setbeamertemplate{footline}{\insertframenumber}
-
 \title{%
   Trusted Computing
 }
-\author{Daniel Bosk\footnote{%
+\author[D.~Bosk]{Daniel Bosk\footnote{%
   This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 
   Unported license.
 	To view a copy of this license, visit 
@@ -74,32 +103,15 @@
 %\logo{\pgfuseimage{university-logo}}
 
 \AtBeginSection[]{%
-  \begin{frame}<beamer>{Overview}
-    \begin{multicols}{2}
-      \tableofcontents[currentsection]
-    \end{multicols}
+  \begin{frame}<beamer>
+    \tableofcontents[currentsection]
   \end{frame}
 }
-%\AtBeginSubsection[]{%
-%  \begin{frame}<beamer>{Overview}
-%    \tiny
-%    \tableofcontents[currentsubsection,sectionstyle=shaded]
-%  \end{frame}
-%}
 
 \begin{document}
 
 \begin{frame}
   \titlepage{}
-\end{frame}
-
-%\begin{frame}{Literature}
-%  \input{literature.tex}
-%\end{frame}
-\begin{frame}{Overview}
-  \begin{multicols}{2}
-    \tableofcontents
-  \end{multicols}
 \end{frame}
 
 
@@ -118,7 +130,7 @@
 
 \subsection{What is DRM?}
 
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}
   \begin{itemize}
     \item The main purpose of DRM is to prevent piracy.
 
@@ -133,7 +145,7 @@
 
 \subsection{Historical Approaches}
 
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}
   \begin{itemize}
     \item In the dawn of computing software was given away for free by the 
       hardware (HW) vendors.
@@ -148,7 +160,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}
   \begin{itemize}
     \item In the 1970's software could be turned into general packages.
 
@@ -164,7 +176,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}
   \begin{itemize}
     \item Then came the 1980's, with these general purpose computer systems 
       came attempts at copyright enforcement.
@@ -181,7 +193,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}
   \begin{itemize}
     \item In summary, there was essentially three general approaches tried.
 
@@ -204,7 +216,7 @@
 
 \subsection{Modern Approaches}
 
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}
   \begin{itemize}
     \item One of the more modern approaches is to have the software connect to 
       the vendor's servers to verify itself.
@@ -222,7 +234,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}
   \begin{itemize}
     \item Yet other approaches is to encrypt vital parts, e.g.\ some code or 
       video.
@@ -240,7 +252,7 @@
 
 \subsection{Trusted Platform Module}
 
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}
 \end{frame}
 
 
@@ -249,7 +261,7 @@
 
 \subsection{Watermarking}
 
-\begin{frame}{\insertsubsectionhead}
+\begin{frame}
   \begin{itemize}
     \item A different approach has to be taken for non-executable content, 
       since this material cannot check itself.
@@ -264,7 +276,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Referenser}
+\begin{frame}
   \small
   \printbibliography{}
 \end{frame}
