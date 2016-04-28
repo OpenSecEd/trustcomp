@@ -87,12 +87,9 @@
 \title{%
   Trusted Computing
 }
-\author[D.~Bosk]{Daniel Bosk\footnote{%
-  This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 
-  Unported license.
-	To view a copy of this license, visit 
-	\url{http://creativecommons.org/licenses/by-sa/3.0/}.
-}}
+\author[D.~Bosk]{%
+  Daniel Bosk
+}
 \institute[MIUN ICS]{%
   Department of Information and Communication Systems,\\
   Mid Sweden University, Sundsvall.
@@ -236,6 +233,19 @@
 
 \begin{frame}
   \begin{itemize}
+    \item However, the Blizzard approach might cause problems.
+    \item For how long do you intend to support that product?
+      \begin{itemize}
+        \item If I buy something, then I expect to be able to use it for as 
+          long as I like.
+        \item If you stop supporting it, and I need the product, I should be 
+          allowed to at least reverse engineer it and use that.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
     \item Yet other approaches is to encrypt vital parts, e.g.\ some code or 
       video.
 
@@ -243,6 +253,9 @@
       (DVD, BlueRay, streaming services).
 
     \item However, this must be decrypted before use \dots
+
+    \item But I can at least use the stuff for as long as I like (or have 
+      functioning equipment).
   \end{itemize}
 \end{frame}
 
@@ -250,9 +263,90 @@
 % XXX extend part on trusted computing
 \section{Trusted Computing}
 
+\subsection{Desired Properties}
+
+\begin{frame}
+  \begin{block}{The idea}
+    \begin{itemize}
+      \item What if a program running in a system could ascertain the integrity 
+        of the system?
+
+      \item E.g.\ that we run a particular OS, that the OS is unmodified, that 
+        the program itself is unmodified.
+
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Remote attestation}
+    \begin{itemize}
+      \item We add a tamper-resistant hardware chip.
+      \item This chip can query the rest of the hardware.
+      \item It can then create a digitally signed summary of the hardware and 
+        attest that it is correct.
+
+        \pause{}
+
+      \item We can even attest the running software.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{alertblock}{Dangers}
+    \begin{itemize}
+      \item This could be used to lock the user out of the hardware.
+        \begin{itemize}
+          \item Run authentic Windows or don't use the hardware at all!
+          \item Linux?!
+            Anything you create yourself?!
+            If you're not a multimillion dollar company, who cares?
+        \end{itemize}
+    \end{itemize}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Sealed Storage}
+    \begin{itemize}
+      \item Protects private data by binding it to the platform.
+        \begin{itemize}
+          \item Use the hardware chip for encryption.
+          \item The chip includes the configuration as part of the key.
+          \item Only the chip has the key.
+        \end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    \begin{itemize}
+      \item Encrypt your own data, no one can steal it and decrypt it 
+        elsewhere.
+      \item If you change your hardware too much, then neither can you.
+    \end{itemize}
+  \end{example}
+
+  \pause{}
+
+  \begin{example}
+    \begin{itemize}
+      \item Encrypt media content with certain requirements.
+      \item The hardware will only decrypt it if you run an unmodified version 
+        of a DRM-enforcing player.
+    \end{itemize}
+  \end{example}
+\end{frame}
+
 \subsection{Trusted Platform Module}
 
 \begin{frame}
+  \begin{itemize}
+    \item The Trusted Platform Module (TPM) is an industry standard.
+    \item It is maintained by the Trusted Computing Group (TCG).
+  \end{itemize}
 \end{frame}
 
 
