@@ -1,0 +1,69 @@
+\question[3]\label{q:trustcomp}
+% examgen: trustcomp:E:C:A
+Describe the requirements for a process to be able to assess the integrity of 
+itself and its execution environment.
+
+\begin{solution}
+  If the process can trust its environment (i.e.\ the operating system), then 
+  it can rely on the environment to assess its own integrity.
+  Thus the process relies on the integrity of the operating system.
+  The oerating system in turn relies on the integrity of the hardware and must 
+  rely on the hardware to assess its own integrity.
+  Hence the process needs hardware that will not allow a modified version of 
+  the operating system to run.
+\end{solution}
+
+
+\question[4]\label{q:trustcomp}
+% examgen: trustcomp:E:C:A
+Give an example of a DRM system, the idea behind it and why it works or not.
+
+\begin{solution}
+  Hardware dongles:
+  You have a hardware dongle attached to the computer, the software can then 
+  communicate with the dongle.
+  The idea is that the software can be copied easily, but the dongle cannot.
+  Thus the software can only run in as many instances as there are hardware 
+  dongles.
+
+  The hardware dongle can be simulated by other software in many cases.
+  For the software to be able to tell the dongle and the simulated dongle 
+  apart, it must be able to trust the operating system --- thus it needs to 
+  verify the integrity of the operating system, which in turn requires special 
+  hardware.
+  The alternative approach is that the dongle is more sophisticated, e.g.\ that 
+  it uses unforgeable digital signatures as output.
+  In this case we instead modify the software itself, so that it simply skips 
+  the checks with the dongle (e.g.\ the signature verification always returns 
+  true).
+\end{solution}
+
+
+\question[2]\label{q:trustcomp}
+% examgen: trustcomp:E:C
+What is remote attestation?
+
+\begin{solution}
+  Remote attestation is the problem of remotely verify the integrity of 
+  a running system.
+  Basically to ascertain if a black box runs a given software.
+\end{solution}
+
+
+\question\label{q:trustcomp}
+% examgen: trustcomp:E:C:A
+\begin{parts}
+  \part[2] What is sealed storage?
+  \begin{solution}
+    This binds the data to the platform, which means that the data is encrypted 
+    using the hardware and the key depends on the hardware configuration.
+    This means that no one can steal the data and decrypt it elsewhere.
+  \end{solution}
+
+  \part[3] Give a brief analysis of its advantages and disadvantages.
+  \begin{solution}
+    The data is secure.
+    However, it might be too secure: what happens if the hardware breaks, e.g.\ 
+    you need to buy a new computer?
+  \end{solution}
+\end{parts}
