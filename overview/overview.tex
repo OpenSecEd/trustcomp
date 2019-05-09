@@ -343,36 +343,34 @@
 \subsection{Trusted Platform Module}
 
 \begin{frame}
-  \begin{itemize}
-    \item The Trusted Platform Module (TPM) is an industry standard.
-    \item It is maintained by the Trusted Computing Group (TCG).
-  \end{itemize}
+  \begin{block}{Trusted Platform Module, TPM}
+    \begin{itemize}
+      \item The Trusted Platform Module (TPM) is an industry standard.
+      \item It is maintained by the Trusted Computing Group (TCG).
+      \item Most computers has such a chip.
+    \end{itemize}
+  \end{block}
 \end{frame}
-
-
-% XXX extend part on information hiding
-\section{Information Hiding}
-
-\subsection{Watermarking}
 
 \begin{frame}
-  \begin{itemize}
-    \item A different approach has to be taken for non-executable content, 
-      since this material cannot check itself.
-
-    \item The approach here is watermarking using steganographic methods.
-
-    \item However, these are also quite easily thwarted.
-  \end{itemize}
+  \begin{block}{TPM functionality}
+    \begin{itemize}
+      \item Random number generator
+      \item Generation of crypto keys
+      \item Remote attestation
+      \item Binding: encrypts data with the TPM binding key.
+      \item Sealing: similar to binding, but specifies TPM state for 
+        decryption.
+    \end{itemize}
+  \end{block}
 \end{frame}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
   \small
-  \printbibliography{}
+  \printbibliography
 \end{frame}
 
 \end{document}
