@@ -116,3 +116,61 @@
   \end{block}
 \end{frame}
 
+\subsection{Secure enclaves}
+
+\begin{frame}
+  \begin{block}{Idea behind secure enclaves}
+    \begin{itemize}
+      \item Consider operating system, hypervisor hostile.
+      \item An enclave is a secure computing environment in this environment.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Outline Intel SGX}
+    \begin{itemize}
+      \item The enclave memory is encrypted.
+      \item Decrypted on-the-fly inside the processor.
+      \item Only decrypted for code inside the enclave.
+    \end{itemize}
+  \end{block}
+
+  \pause
+
+  \begin{remark}
+    \begin{itemize}
+      \item This means that code is also encrypted.
+      \item No debugging.
+    \end{itemize}
+  \end{remark}
+\end{frame}
+
+\begin{frame}
+  \begin{example}[Uses]
+    \begin{itemize}
+      \item Remote computation: encrypt code, data for enclave, send to remote.
+      \item Secure web browsing: lock things into an enclave.
+      \item Digital rights management
+      \item Conceal proprietary algorithms and encryption keys.
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \begin{example}[Implementations]
+    \begin{itemize}
+      \item Intel SGX: from 6th gen Intel Core processors.
+      \item QEMU supports Intel SGX.
+      \item Georgia Tech's OpenSGX simulator.
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \begin{remark}
+    \begin{itemize}
+      \item There are attacks against Intel SGX!
+    \end{itemize}
+  \end{remark}
+\end{frame}
