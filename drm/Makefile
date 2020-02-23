@@ -1,5 +1,5 @@
 .PHONY: all
-all: slides.pdf
+all: slides.pdf README.md
 
 SRC=		slides.tex abstract.tex preamble.tex bibliography.bib
 SRC+= 		contents.tex
