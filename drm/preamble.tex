@@ -13,23 +13,8 @@
 \usepackage{listings}
 \usepackage{csquotes}
 
-\usepackage{xparse}
-\ProvideDocumentEnvironment{exercise}{o}{%
-  \setbeamercolor{block body}{bg=yellow!30,fg=black}
-  \setbeamercolor{block title}{bg=yellow,fg=black}
-  \IfValueTF{#1}{%
-    \begin{block}{Exercise: #1}
-  }{%
-    \begin{block}{Exercise}
-  }
-}{%
-  \end{block}
-}
-
 \usepackage[natbib,style=alphabetic,maxbibnames=99]{biblatex}
 \addbibresource{bibliography.bib}
-
-\newenvironment{axiom}[1]{\begin{block}{Axiom (#1)}}{\end{block}}
 
 \DeclareMathOperator{\U}{\mathcal{U}}
 \DeclareMathOperator{\T}{\mathcal{T}}
@@ -46,15 +31,4 @@
 
 \renewcommand{\qedsymbol}{Q.E.D.}
 
-\DeclareMathOperator{\hmac}{HMAC}
-\DeclareMathOperator{\concat}{||}
-
-\DeclareMathOperator{\believes}{|\!\!\!\equiv}
-\DeclareMathOperator{\said}{|\!\!\!\sim}
-\DeclareMathOperator{\controls}{\Mapsto}
-\DeclareMathOperator{\sees}{\lhd}
-\newcommand{\fresh}[1]{\#(#1)}
-\newcommand{\encrypt}[2]{\{#1\}_{#2}}
-\newcommand{\share}[1]{\stackrel{#1}{\leftrightarrow}}
-\newcommand{\pubkey}[1]{\stackrel{#1}{\mapsto}}
-
+\usepackage{beamer-didactic}
