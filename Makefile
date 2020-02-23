@@ -1,4 +1,5 @@
 SUBDIR=		./overview
+SUBDIR+= 	./drm
 SUBDIR+= 	./drmlab
 
 

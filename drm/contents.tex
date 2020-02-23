@@ -1,0 +1,164 @@
+\mode*
+
+% Since this a solution template for a generic talk, very little can
+% be said about how it should be structured. However, the talk length
+% of between 15min and 45min and the theme suggest that you stick to
+% the following rules:  
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+
+\section{Digital Rights Management}
+
+\subsection{What is DRM?}
+
+\begin{frame}
+  \begin{itemize}
+    \item The main purpose of DRM is to prevent piracy.
+
+    \item This can be applied to all sorts of material; from photos, to films, 
+      to application programs, and all the way to operating systems.
+
+    \item There are different approaches and purposes, e.g.\ to control piracy, 
+      but also to control the selling of used products.
+
+  \end{itemize}
+\end{frame}
+
+\subsection{Historical Approaches}
+
+\begin{frame}
+  \begin{itemize}
+    \item In the dawn of computing software was given away for free by the 
+      hardware (HW) vendors.
+
+    \item This was one way to promote sales of HW, the users needed software to 
+      use the HW\@.
+
+    \item This changed, and in the 1960's software was a significant cost.
+
+    \item Now HW vendors charged extra for their OSes and there were 
+      third-party software vendors.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item In the 1970's software could be turned into general packages.
+
+    \item I.e.\ software needed no longer be customised to the users' HW\@.
+
+    \item Now problems with the ownership of code rose, what if one of your 
+      programmers left for a competitor and their program soon got some of your 
+      features.
+
+    \item To determine if the programmer copied the source or reinvented it, 
+      software birthmarks could be used -- i.e.\ analysing how the software is 
+      coded.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item Then came the 1980's, with these general purpose computer systems 
+      came attempts at copyright enforcement.
+
+    \item Some approaches was to lock the software with an error message every 
+      few months, e.g.\ ``Error \(X\):  Please call technical support'', where 
+      \(X\) is a customer specific number.
+
+    \item This worked for as long as users were technically unknowledgable and 
+      it didn't cross the limit what was considered reliable.
+
+    \item Other apporaches was for the software to look at the processor's 
+      serial number.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item In summary, there was essentially three general approaches tried.
+
+    \item First, to add uniqueness to the machine; e.g.\ a HW dongle.
+
+    \item Second, to create uniqueness within it; e.g.\ install the software in 
+      a way that prevented naïve copying (cf.\ Adobe Photoshop which modified 
+      the boot loader and accidentally removes Grub).
+
+    \item Generally people must be able to create a backup, but not copy those 
+      backups for sharing (copy generation control).
+
+    \item And third, to use whatever uniqueness there already was; e.g.\ 
+      storing the characteristics of the computer, cards present, amount of 
+      memory, etc.
+
+    \item This approach needs to handle HW upgrades though.
+  \end{itemize}
+\end{frame}
+
+\subsection{Modern Approaches}
+
+\begin{frame}
+  \begin{itemize}
+    \item One of the more modern approaches is to have the software connect to 
+      the vendor's servers to verify itself.
+
+    \item This works as long as the software isn't needed offline.
+
+    \item But even online it can be really annoying, cf.\ Ubisoft's Assassin's 
+      Creed DRM which required a constant connection.
+
+    \item Another is to leave some critical part to be done by the vendor's 
+      servers.
+
+    \item An example of this is Blizzard's Diablo 3 games, which lets the 
+      server handle the entire game (map generation, NPCs, etc.).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item However, the Blizzard approach might cause problems.
+    \item For how long do you intend to support that product?
+      \begin{itemize}
+        \item If I buy something, then I expect to be able to use it for as 
+          long as I like.
+        \item If you stop supporting it, and I need the product, I should be 
+          allowed to at least reverse engineer it and use that.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item Yet other approaches is to encrypt vital parts, e.g.\ some code or 
+      video.
+
+    \item This can be used for both software and media, for which it is popular 
+      (DVD, BlueRay, streaming services).
+
+    \item However, this must be decrypted before use \dots
+
+    \item But I can at least use the stuff for as long as I like (or have 
+      functioning equipment).
+  \end{itemize}
+\end{frame}
+
+% XXX extend part on information hiding
+\subsection{Information hiding and watermarking}
+
+\begin{frame}
+  \begin{itemize}
+    \item A different approach has to be taken for non-executable content, 
+      since this material cannot check itself.
+
+    \item The approach here is watermarking using steganographic 
+      methods.
+
+    \item However, these are also quite easily thwarted.
+  \end{itemize}
+\end{frame}
+

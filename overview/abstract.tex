@@ -1,19 +1,34 @@
+\emph{Summary:}
 One can only do so much with software.
-The problem with software and general purpose processors is that the software 
+One problem with software and general purpose processors is that the software 
 can be modified and the processor will still execute it.
-Here we will explore how to ensure the integrity of the computer system before 
-use.
-As an example, Alice has a laptop while travelling, how can she be sure no 
-foreign intelligence agency inserted a modified version of the operating system 
-during the customs inspection?
-Or, what about when she left the laptop in the hotel room while having 
-breakfast, perhaps the hotel aide replaced the bootloader to break Alice's 
-full-disk encryption?
-Another aspect of this is to protect parts of the system from Alice herself, 
-this is what Digital Rights Management is all about.
-A content owner who only allows using his or her material in a certain way must 
-have some means of ensuring this is enforced.
-These needs boils down to trusted computing.
+Another is that, that running software cannot evaluate the processing 
+environment which executes it.
 
-We treat the material in Chapters 16, 18 and 22 in 
+Some examples: Alice had her laptop in her bag as it passed through the 
+security check.
+While she was busy with the scans, one customs official booted the laptop from 
+a USB stick and installed a different boot loader.
+Or, how can Alice even trust the computer when it is brand new?
+Another aspect of this is to protect parts of the system from Alice herself, 
+\eg this is what \ac{DRM} is all about.
+We also have the compartmentalization of apps in a smartphone.
+If Alice accidentally installs a malicious app, it shouldn't be able to 
+compromize the banking app.
+Here we will explore how to ensure the integrity of the computer system.
+
+\emph{Intended learning outcomes:}
+More concretely, after this session you should be able to
+\begin{itemize}
+  \item \emph{understand} the problem of trusted computing, its approaches to 
+    solutions, the underlying assumptions and its limitations.
+  \item \emph{analyse} different approaches to trusted computing and their 
+    limitations and \emph{apply} them in a solution to a given problem.
+\end{itemize}
+
+\emph{Reading:}
+We touch on the topics in Chapters 16, 17, 18 and 23 in 
 \citetitle{Anderson2008sea}~\cite{Anderson2008sea}.
+The papers~\cite{%
+  VoltageKeyExtraction,AcousticKeyExtraction,ElectromagneticKeyExtraction%
+} illustrates just how difficult it can be to lock secrets into hardware.
