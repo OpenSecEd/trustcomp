@@ -4,6 +4,8 @@ all: slides.pdf README.md
 SRC=		slides.tex abstract.tex preamble.tex bibliography.bib
 SRC+= 		contents.tex
 
+DEPENDS= 	beamer-didactic.sty
+
 slides.pdf: ${SRC}
 
 
@@ -28,3 +30,5 @@ clean:
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/tex.mk
 include ${INCLUDE_MAKEFILES}/doc.mk
+INCLUDE_BEAMERDIDACTIC=../beamer-didactic
+include ${INCLUDE_BEAMERDIDACTIC}/beamer-didactic.mk

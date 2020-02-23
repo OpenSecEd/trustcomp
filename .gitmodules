@@ -6,3 +6,6 @@
 	path = drmlab
 	url = https://github.com/OpenSecEd/drmlab.git
 	branch = master
+[submodule "beamer-didactic"]
+	path = beamer-didactic
+	url = https://github.com/dbosk/beamer-didactic.git
