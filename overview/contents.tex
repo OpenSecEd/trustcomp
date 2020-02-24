@@ -116,7 +116,7 @@
   \end{block}
 \end{frame}
 
-\subsection{Secure enclaves}
+\subsection{Intel SGX secure enclaves}
 
 \begin{frame}
   \begin{block}{Idea behind secure enclaves}
@@ -128,22 +128,15 @@
 \end{frame}
 
 \begin{frame}
-  \begin{block}{Outline Intel SGX}
+  \begin{block}{Highlights of Intel SGX}
     \begin{itemize}
-      \item The enclave memory is encrypted.
-      \item Decrypted on-the-fly inside the processor.
+      \item The enclave memory (data and code) is encrypted.
+      \item Decrypted on-the-fly \emph{inside and only inside the processor}.
       \item Only decrypted for code inside the enclave.
+      \item Remote attestation for enclaves.
+      \item Sealed storage.
     \end{itemize}
   \end{block}
-
-  \pause
-
-  \begin{remark}
-    \begin{itemize}
-      \item This means that code is also encrypted.
-      \item No debugging.
-    \end{itemize}
-  \end{remark}
 \end{frame}
 
 \begin{frame}
@@ -155,6 +148,30 @@
       \item Conceal proprietary algorithms and encryption keys.
     \end{itemize}
   \end{example}
+\end{frame}
+
+\begin{frame}
+  \begin{example}[Signal contact discovery~\cite{SignalSGXContactDiscovery}]
+    \begin{itemize}
+      \item User phone runs an enclave on Signal's server.
+      \item Sends contacts encrypted for attested enclave.
+      \item Enclave looks up if contacts are registered users.
+      \item Returns encrypted results.
+    \end{itemize}
+  \end{example}
+
+  \pause
+
+  \begin{remark}
+    \begin{itemize}
+      \item Must be careful how to do it!
+      \item See \cite{SignalSGXContactDiscovery} for details:
+        \begin{center}
+          \href{https://signal.org/blog/private-contact-discovery/}
+            {signal.org/blog/private-contact-discovery}.
+        \end{center}
+    \end{itemize}
+  \end{remark}
 \end{frame}
 
 \begin{frame}
