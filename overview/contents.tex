@@ -174,3 +174,79 @@
     \end{itemize}
   \end{remark}
 \end{frame}
+
+\subsection{Root of trust}
+
+\begin{frame}
+  \begin{remark}
+    \begin{itemize}
+      \item We must root our trust somewhere.
+    \end{itemize}
+  \end{remark}
+
+  \pause
+
+  \begin{block}{Two approaches}
+    \begin{enumerate}
+      \item Trust hardware manufacturer, its firmware is read-only.
+      \item We test it.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{example}[We trust the manufacturer]
+    \begin{itemize}
+      \item We embed a digital certificate in the hardware.
+      \item Hardware can sign all output.
+      \item Then we can be sure we're talking to the correct hardware.
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \begin{example}[We test the hardware]
+    \begin{itemize}
+      \item We must test the hardware (software onboard) in a particular 
+        way~\cite{EstablishRootOfTrustUnconditionally}.
+
+      \item System we test has memory \(M\) and registers \(R\).
+    \end{itemize}
+    \begin{enumerate}
+      \item Verifier asks system to initialize \(M, R\).
+
+      \item Verifier asks system to compute \(C_n = C_{m,t}(M, R, n)\) for some 
+        nonce \(n\), takes \(m\) words and \(t\) time.
+    \end{enumerate}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \begin{remark}
+    \begin{itemize}
+      \item If \(C_{m,t}\) is
+        \begin{itemize}
+          \item space-time optimal\footnote{%
+              Lower bound equals upper bound for the algorithm.
+            } and
+          \item second preimage free,
+        \end{itemize}
+      \item then this cannot be done in fewer than \(m\) words and less than 
+        \(t\) time.
+      \item All chips in the system must be tested simultaneously for the same 
+        amount of time, so they can't help each other.
+    \end{itemize}
+  \end{remark}
+\end{frame}
+
+\begin{frame}
+  \begin{remark}
+    \begin{itemize}
+      \item The details are in \fullcite{EstablishRootOfTrustUnconditionally}.
+      \item There is a video presentation of the paper here:
+        \begin{center}
+          \url{https://youtu.be/CLQosBDiG3Q}.
+        \end{center}
+    \end{itemize}
+  \end{remark}
+\end{frame}
