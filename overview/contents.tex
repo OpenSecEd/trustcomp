@@ -103,13 +103,14 @@
   \end{block}
 \end{frame}
 
-\subsection{Intel SGX secure enclaves}
+\subsection{Trusted execution environments}
 
 \begin{frame}
   \begin{block}{Idea behind secure enclaves}
     \begin{itemize}
       \item Consider operating system, hypervisor hostile.
-      \item An enclave is a secure computing environment in this environment.
+      \item A trusted execution environment (TEE) is a secure computing 
+        environment inside this environment.
     \end{itemize}
   \end{block}
 \end{frame}
@@ -117,13 +118,22 @@
 \begin{frame}
   \begin{block}{Highlights of Intel SGX}
     \begin{itemize}
-      \item The enclave memory (data and code) is encrypted.
+      \item The enclave (the TEE) memory (data and code) is encrypted.
       \item Decrypted on-the-fly \emph{inside and only inside the processor}.
       \item Only decrypted for code inside the enclave.
       \item Remote attestation for enclaves.
       \item Sealed storage.
     \end{itemize}
   \end{block}
+
+  \pause
+
+  \begin{remark}
+    \begin{itemize}
+      \item Must trust the CPU!
+      \item Meaning: must trust CPU manufacturer.
+    \end{itemize}
+  \end{remark}
 \end{frame}
 
 \begin{frame}
@@ -152,7 +162,7 @@
   \begin{remark}
     \begin{itemize}
       \item Must be careful how to do it!
-      \item See \cite{SignalSGXContactDiscovery} for details:
+      \item See~\cite{SignalSGXContactDiscovery} for details:
         \begin{center}
           \href{https://signal.org/blog/private-contact-discovery/}
             {signal.org/blog/private-contact-discovery}.
@@ -169,6 +179,14 @@
       \item Georgia Tech's OpenSGX simulator.
     \end{itemize}
   \end{example}
+
+  \pause
+
+  \begin{remark}
+    \begin{itemize}
+      \item Processors by other manufacturers have similar features.
+    \end{itemize}
+  \end{remark}
 \end{frame}
 
 \begin{frame}
