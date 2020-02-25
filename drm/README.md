@@ -1,4 +1,7 @@
-[DRM]
+[![Video: DRM][img]][vid]
+
+[img]: https://img.youtube.com/vi/G3dyzo1MACo/hqdefault.jpg
+[vid]: https://youtu.be/G3dyzo1MACo
 
 *Summary:* One can only do so much with software. We will explore the
 history of <span acronym-label="DRM"

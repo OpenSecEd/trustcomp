@@ -1,20 +1,28 @@
-[Trusted computing] discusses common approaches and their limitations to 
-trusted computing.
+[![Trusted computing][img]][vid]
 
-One can only do so much with software. The problem with software and
-general purpose processors is that the software can be modified and the
-processor will still execute it. Some examples: Alice left the laptop in
-the hotel room while having breakfast, perhaps the hotel aide replaced
-the bootloader to break Alice’s full-disk encryption? Or, how can Alice
-even trust the computer when it is brand new? Another aspect of this is
-to protect parts of the system from Alice herself, e.g. this is what
-<span acronym-label="DRM" acronym-form="singular+short">DRM</span> is
-all about. We also have the compartmentalization of apps in a
-smartphone. If Alice accidentally installs a malicious app, it shouldn’t
-be able to compromize the banking app. Here we will explore how to
-ensure the integrity of the computer system.
+[img]: https://img.youtube.com/vi/Uj-ElonmxaI/hqdefault.jpg
+[vid]: https://youtu.be/Uj-ElonmxaI
 
-More concretely, after this session you should be able to
+*Summary:* One can only do so much with software. One problem with
+software and general purpose processors is that the software can be
+modified and the processor will still execute it. Another is that, that
+running software cannot evaluate the processing environment which
+executes it.
+
+Some examples: Alice had her laptop in her bag as it passed through the
+security check. While she was busy with the scans, one customs official
+booted the laptop from a USB stick and installed a different boot
+loader. Or, how can Alice even trust the computer when it is brand new?
+Another aspect of this is to protect parts of the system from Alice
+herself, this is what <span acronym-label="DRM"
+acronym-form="singular+short">DRM</span> is all about. We also have the
+compartmentalization of apps in a smartphone. If Alice accidentally
+installs a malicious app, it shouldn’t be able to compromize the banking
+app. Here we will explore how to ensure the integrity of the computer
+system.
+
+*Intended learning outcomes:* More concretely, after this session you
+should be able to
 
 -   *understand* the problem of trusted computing, its approaches to
     solutions, the underlying assumptions and its limitations.
@@ -22,12 +30,10 @@ More concretely, after this session you should be able to
 -   *analyse* different approaches to trusted computing and their
     limitations and *apply* them in a solution to a given problem.
 
-We treat the material in Chapters 16, 17, 18, 22 and 23 in  (Anderson
-2008). The papers (Genkin, Pipman, and Tromer 2015; Genkin, Shamir, and
-Tromer 2014; Genkin et al. 2015) illustrates just how difficult this can
-be. The authors extract encryption keys using acoustic side-channels,
-i.e. they analyse the sound emitted by the electrical circuitry to find
-the computations done and hence derive the bits of the key used.
+*Reading:* We touch on the topics in Chapters 16, 17, 18 and 23 in
+ (Anderson 2008). The papers (Genkin, Pipman, and Tromer 2015; Genkin,
+Shamir, and Tromer 2014; Genkin et al. 2015) illustrates just how
+difficult it can be to lock secrets into hardware.
 
 Anderson, Ross J. 2008. *Security Engineering: A Guide to Building
 Dependable Distributed Systems*. 2nd ed. Indianapolis, IN: Wiley.
