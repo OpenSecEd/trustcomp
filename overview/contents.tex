@@ -50,8 +50,9 @@
       \item Protects private data by binding it to the platform.
         \begin{itemize}
           \item Use the hardware chip for encryption.
-          \item The chip includes the configuration as part of the key.
           \item Only the chip has the key.
+          \item The chip can include the state as part of the key.
+          \item Thus the system must be in a particular state to decrypt.
         \end{itemize}
     \end{itemize}
   \end{block}
