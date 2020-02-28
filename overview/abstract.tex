@@ -27,8 +27,18 @@ More concretely, after this session you should be able to
 \end{itemize}
 
 \emph{Reading:}
-We touch on the topics in Chapters 16, 17, 18 and 23 in 
-\citetitle{Anderson2008sea}~\cite{Anderson2008sea}.
-The papers~\cite{%
-  VoltageKeyExtraction,AcousticKeyExtraction,ElectromagneticKeyExtraction%
-} illustrates just how difficult it can be to lock secrets into hardware.
+We touch on the topics in Chapters 16, 17, 18 (read until and including 
+18.2.1) and 
+23 (23.1--23.2) in \citetitle{Anderson2008sea}~\cite{Anderson2008sea}.
+
+For root-of-trust, there is the 
+paper~\cite{EstablishRootOfTrustUnconditionally} by 
+\citeauthor{EstablishRootOfTrustUnconditionally}.
+Sections I and II are enough (we don't need more than an overview).
+\Textcite{HDDmalware,USBmalware,BIOSmalware} provides some examples of 
+real-world problems in this area.
+
+For trusted execution-environments, we use Intel SGX as an example.
+This is introduced by \textcite{IntelSGXTutorial}.
+For a very details exposition on SGX, see the work by 
+\textcite{IntelSGXExplained}.
